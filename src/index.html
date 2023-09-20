@@ -8,34 +8,32 @@
 </head>
 <body>
     <div class="container">
-        <h2>To-Do List</h2>
-        <form action="" id="addForm"class="add-form">
-            <input type="text" id="todoInput" required>
-            <button>Add</button>
-        </form>
-
         <div class="main-section">
-            <div id="actionsBar" class="actions-bar">
-                <div class="left-counter"><span id="leftCounter">0</span> items left</div>
-                <div class="center-btns">
-                    <button class="filter-btn all-btn active">All</button>
-                    <button class="filter-btn active-todos-btn">Active</button>
-                    <button class="filter-btn completed-todos-btn">Completed</button>
-                </div>
-                <button class="clear-completed-btn">Clear Completed</button>
+            <h2>To-Do</h2>
+            <form action="" id="addForm"class="add-form">
+                <input type="text" id="todoInput" required>
+                <button></button>
+            </form>
+            <div id="filterBtns" class="filter-btns">
+                <button class="filter-btn all-btn active">All</button>
+                <button class="filter-btn active-todos-btn">Active</button>
+                <button class="filter-btn completed-todos-btn">Completed</button>
             </div>
             <ul id="list" class="list"></ul>
         </div>
+        <div class="footer">
+            <div class="left-counter"><span id="leftCounter">0</span> items left</div>
+            <button id="clearCompletedBtn" class="clear-completed-btn">Clear Completed</button>
+        </div>
     </div>
 
-    <template id="list-item-template">
+    <template id="listItemTemplate">
         <li data-item-id="1" class="list-item">
-            <span>Done</span>
-            <span id="item-content"></span>
-            <span class="delete-btn">Delete</span>
+            <span class="checkbox"></span>
+            <span id="itemContent" class="item-content"></span>
+            <span class="delete-btn"></span>
         </li>
     </template>
-
     <script src="./index.js"></script>
 </body>
 </html>

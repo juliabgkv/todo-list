@@ -4,75 +4,88 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #292B32;
+    background-color: #1D2041;
+    background-size: cover;
+    min-height: 100vh;
 }
 
 .container {
     padding: 20px;
     margin: 50px auto;
-    width: 60%;
+    width: 40%;
     text-align: center;
-    border: 1px solid #fff;
-    -webkit-box-shadow: 0px 0px 11px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 11px 0px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 11px 0px rgba(0,0,0,0.75);
+    border-radius: 30px;
+    background-color: #252849;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 .container h2 {
     font-family: 'Roboto', sans-serif;
-    color: #fff;
+    color: #FFF;
+    text-align: left;
     text-transform: uppercase;
     font-size: 30px;
     letter-spacing: 2px;
+    margin: 20px 0;
 }
 
 .add-form {
     display: flex;
-    height: 30px;
+    height: 40px;
 }
 
 .add-form  input {
-    width: 80%;
-    background-color: transparent;
-    border: 1px solid #fff;
+    font-family: 'Josefin Sans', sans-serif;
+    width: 90%;
+    font-size: 15px;
+    background-color: #2D315A;
+    border-radius: 10px 0 0 10px;
+    border: none;
+    padding: 0 10px;
+    color: #FFF;
+}
+
+.add-form  input:focus {
+    outline: none;
 }
 
 .add-form  button {
-    width: 20%;
-    background-color: #fff;
-    text-transform: uppercase;
-    color: #292B32;
-    border: 1px solid #fff;
+    width: 10%;
+    border: none;
     cursor: pointer;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 700;
+    border-radius: 0 10px 10px 0;
+    background-color: #2D315A;
+    background-image: url(./assets/icons8-plus-24-white.png);
+    background-size: 25px 25px;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.main-section {
-    font-family: 'Josefin Sans', sans-serif;
-}
-
-.main-section .actions-bar {
-    color: #a5a5a5;
-    display: flex;
-    justify-content: space-between;
+.filter-btns .filter-btn,
+.footer .clear-completed-btn {
+    color: #EA4D5F;
     margin: 10px;
-}
-
-.main-section .actions-bar button {
     background-color: transparent;
     border: none;
     font-family: 'Josefin Sans', sans-serif;
-    color: #a5a5a5;
     cursor: pointer;
+    transition: color 100ms ease-in;
 }
 
-.main-section .actions-bar button:hover {
-    color: #fff;
+.filter-btns .filter-btn.active,
+.filter-btns .filter-btn:hover,
+.footer .clear-completed-btn:hover {
+    color: #FFF;
 }
 
-.main-section .actions-bar button.active {
-    color: #fff;
+.footer {
+    display: flex;
+    justify-content: space-between;
+    color: #EA4D5F;
+}
+.footer .left-counter {
+    display: inline;
+    margin: auto 0;
 }
 
 .list {
@@ -84,17 +97,86 @@ body {
 .list .list-item {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     height: 30px;
     line-height: 30px;
-    background-color: #fff;
-    padding: 20px 10px;
-    margin-bottom: 2px;
+    color: #FFF;
+    background-color: #2D315A;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
 }
 
 .list .list-item:last-of-type {
     margin-bottom: 0;
 }
 
-.list .list-item.list-item-completed {
-    text-decoration: line-through;
+.list .list-item .checkbox {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 3px solid #FFF;
+    transition: 100ms ease-in-out;
+}
+
+.list .list-item .checkbox:hover,
+.list .list-item.list-item-completed .checkbox {
+    background-image: url(./assets/check-mark.png);
+    background-size: 10px 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.list .list-item.list-item-completed .checkbox:hover {
+    background-color: transparent;
+}
+
+.list .list-item .item-content {
+    padding-left: 20px;
+    text-align: left;
+    flex: 2 1 auto;
+}
+
+.list .list-item .delete-btn {
+    background-image: url(./assets/icons8-delete-30.png);
+    background-size: 15px 15px;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+}
+
+.list .list-item .delete-btn:hover {
+    opacity: 0.7;
+}
+
+@media(max-width: 1200px) {
+    .container {
+        width: 70%;
+    }
+}
+
+@media(max-width: 640px) {
+    .container {
+        width: 90%;
+    }
+}
+
+@media(max-width: 450px) {
+    .container {
+        padding: 20px;
+        margin: 0;
+        width: 100%;
+        min-height: 100vh;
+        background-color: transparent;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .container h2 {
+        text-align: center;
+    }
 }
