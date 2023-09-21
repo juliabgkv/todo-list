@@ -1,18 +1,23 @@
 {
   "name": "to-do-app",
   "version": "1.0.0",
+  "repository": {
+    "url": "git+https://github.com/juliabgkv/todo-list.git"
+  },
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config webpack.prod.js",
-    "start": "webpack-dev-server --open --config webpack.dev.js"
+    "build": "webpack --mode=development --config webpack.prod.js",
+    "start": "webpack-dev-server --open --config webpack.dev.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "css-loader": "^6.8.1",
+    "gh-pages": "^6.0.0",
     "html-webpack-plugin": "^5.5.3",
     "style-loader": "^3.3.3",
     "webpack": "^5.88.2",
